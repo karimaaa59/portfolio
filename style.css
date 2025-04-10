@@ -1,0 +1,298 @@
+/* Réinitialisation de styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+/* Corps du document */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f7f7f7;
+    color: #333;
+}
+
+
+/* Loader d'animation */
+.loader {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 50px;
+    height: 50px;
+    border: 5px solid #ffa500;
+    border-top: 5px solid transparent;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+    transform: translate(-50%, -50%);
+}
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+
+/* Navigation */
+header {
+    background-color: #333;
+    color: white;
+    padding: 10px 0;
+}
+
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+
+nav .logo {
+    font-size: 24px;
+    font-weight: bold;
+    transition: transform 0.3s ease;
+}
+
+
+nav .logo:hover {
+    transform: rotate(360deg);
+}
+
+
+nav ul {
+    list-style-type: none;
+    display: flex;
+    gap: 20px;
+}
+
+
+nav ul li {
+    margin: 0;
+}
+
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+    transition: color 0.3s, transform 0.3s ease-in-out;
+    position: relative;
+    padding: 5px 0;
+}
+
+
+nav ul li a:hover {
+    color: #ffa500;
+    transform: scale(1.1); /* Agrandissement léger du texte */
+}
+
+
+nav ul li a::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 0;
+    height: 2px;
+    background-color: #ffa500;
+    transition: width 0.3s ease;
+}
+
+
+nav ul li a:hover::after {
+    width: 100%;
+}
+
+
+/* Sections */
+.section {
+    padding: 60px 20px;
+    text-align: center;
+    opacity: 0;
+    transition: opacity 1s ease-out;
+}
+
+
+.section.visible {
+    opacity: 1;
+}
+
+
+.section .content {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+
+h1 {
+    font-size: 32px;
+    margin-bottom: 20px;
+    position: relative;
+    overflow: hidden;
+}
+
+
+h1::before {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background: #ffa500;
+    animation: slideIn 2s forwards;
+}
+
+
+@keyframes slideIn {
+    0% {
+        width: 0;
+    }
+    100% {
+        width: 100%;
+    }
+}
+
+
+ul {
+    list-style-type: none;
+    padding: 0;
+    font-size: 18px;
+    text-align: left;
+}
+
+
+ul li {
+    margin-bottom: 10px;
+}
+
+
+/* Liens email */
+a {
+    color: #333;
+    text-decoration: none;
+}
+
+
+a:hover {
+    color: #ffa500;
+}
+
+
+/* Footer */
+footer {
+    background-color: #333;
+    color: white;
+    padding: 20px 0;
+    text-align: center;
+    font-size: 14px;
+}
+
+
+/* Animation de parallaxe */
+.section {
+    background: url('path_to_your_image.jpg') no-repeat center center;
+    background-attachment: fixed;
+    background-size: cover;
+    padding: 100px 0;
+}
+
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    nav ul {
+        flex-direction: column;
+        gap: 10px;
+        text-align: center;
+    }
+
+
+    nav .logo {
+        font-size: 20px;
+    }
+
+
+    .section {
+        padding: 40px 20px;
+    }
+
+
+    h1 {
+        font-size: 28px;
+    }
+
+
+    ul li {
+        font-size: 16px;
+    }
+}
+
+
+@media (max-width: 480px) {
+    nav .logo {
+        font-size: 18px;
+    }
+
+
+    nav ul li a {
+        font-size: 16px;
+    }
+
+
+    h1 {
+        font-size: 24px;
+    }
+}
+
+
+
+
+/* Animation du dégradé pour le header */
+@keyframes headerGradientAnimation {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+header {
+    background: linear-gradient(45deg, #50e8ff, #6f26ed, #e94f70, #00BFFF);
+    background-size: 400% 400%;
+    animation: headerGradientAnimation 30s ease infinite;
+    color: white;
+    padding: 10px 0;
+}
+h1 {
+    font-size: 32px;
+    white-space: nowrap;
+    overflow: hidden;
+    width: 0;
+    animation: typing 2s steps(30) forwards;
+}
+
+
+@keyframes typing {
+    from {
+        width: 0;
+    }
+    to {
+        width: 100%;
+    }
+}
+
+
+.section {
+    background: rgba(255, 255, 255, 0.1); /* Fond semi-transparent */
+    backdrop-filter: blur(10px); /* Effet flou sur le fond derrière */
+    border-radius: 10px;
+    padding: 50px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Légère ombre */
+}
